@@ -1,0 +1,32 @@
+import kotlin.Int;
+
+CREATE TABLE IF NOT EXISTS tapEnt(
+    def INTEGER AS Int NOT NULL PRIMARY KEY AUTOINCREMENT,
+    name TEXT NOT NULL,
+    goal INTEGER AS Int NOT NULL,
+    current INTEGER AS Int NOT NULL DEFAULT 0
+);
+
+getAllTaps:
+    SELECT * FROM tapEnt ORDER BY goal - current == 0 ASC;
+
+addTap:
+    INSERT INTO tapEnt (name, goal, current)
+    VALUES (?, ?, ?);
+
+updateTap:
+    UPDATE tapEnt
+    SET name = ?, goal = ?
+    WHERE def = ?;
+
+updateTapCurrent:
+    UPDATE tapEnt
+    SET current = CASE WHEN current + 1 <= goal THEN current + 1 ELSE goal END
+    WHERE def = ?;
+
+deleteTapByDef:
+    DELETE FROM tapEnt
+    WHERE def = ?;
+
+
+
