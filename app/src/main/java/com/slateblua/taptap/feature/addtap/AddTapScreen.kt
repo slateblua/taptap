@@ -29,7 +29,7 @@ import com.slateblua.taptap.data.local.model.Tap
 import org.koin.androidx.compose.KoinAndroidContext
 import org.koin.core.annotation.KoinExperimentalAPI
 
-class AddTapScreen(val def: Int? = null) : Screen {
+class AddTapScreen : Screen {
     @OptIn(KoinExperimentalAPI::class)
     @Composable
     override fun Content() {

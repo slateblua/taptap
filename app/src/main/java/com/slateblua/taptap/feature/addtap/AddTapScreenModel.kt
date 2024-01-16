@@ -6,6 +6,7 @@ import com.slateblua.taptap.data.TapRepo
 import com.slateblua.taptap.data.local.model.Tap
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.launch
+
 class AddTapScreenModel(private val tapRepo: TapRepo) : ScreenModel {
 
     private val _tapName = MutableStateFlow("")
@@ -39,7 +40,7 @@ class AddTapScreenModel(private val tapRepo: TapRepo) : ScreenModel {
 
     private fun clear() {
         setTapName("")
-        setTapGoal(0)
+        setTapGoal(MIN_TAP_GOAL)
     }
 
 }
