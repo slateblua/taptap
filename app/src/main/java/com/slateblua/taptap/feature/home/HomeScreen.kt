@@ -5,11 +5,14 @@ import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.items
+import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.filled.Add
 import androidx.compose.material3.AlertDialog
 import androidx.compose.material3.Button
 import androidx.compose.material3.CircularProgressIndicator
 import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.FloatingActionButton
+import androidx.compose.material3.Icon
 import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Text
 import androidx.compose.material3.TopAppBar
@@ -51,7 +54,7 @@ class HomeScreen : Screen {
             topBar = { TopAppBar(title = { Text(text = "TapTap") })},
             floatingActionButton = {
                 FloatingActionButton(onClick = { nav.push(AddTapScreen()) }) {
-                    Text(text = "+ new tap")
+                    Icon(Icons.Default.Add, contentDescription = "Add Tap")
                 }
             }
         ) { paddValues ->
