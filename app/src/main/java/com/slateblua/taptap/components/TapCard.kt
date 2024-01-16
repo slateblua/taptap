@@ -53,7 +53,8 @@ fun TapCard(
                 Spacer(modifier = Modifier.height(4.dp))
                 CircularProgressIndicator(
                     progress = tap.current.toFloat() / tap.goal.toFloat(),
-                    color = MaterialTheme.colorScheme.primary
+                    color = MaterialTheme.colorScheme.primary,
+                    trackColor = MaterialTheme.colorScheme.outline,
                 )
             }
             Checkbox(checked = tap.completed, onCheckedChange = { })

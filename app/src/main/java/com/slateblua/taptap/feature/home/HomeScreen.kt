@@ -7,8 +7,6 @@ import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.items
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.Add
-import androidx.compose.material3.AlertDialog
-import androidx.compose.material3.Button
 import androidx.compose.material3.CircularProgressIndicator
 import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.FloatingActionButton
@@ -24,6 +22,7 @@ import cafe.adriel.voyager.core.screen.Screen
 import cafe.adriel.voyager.koin.getScreenModel
 import cafe.adriel.voyager.navigator.LocalNavigator
 import cafe.adriel.voyager.navigator.currentOrThrow
+import com.slateblua.taptap.components.TapAlertMenu
 import com.slateblua.taptap.components.TapCard
 import com.slateblua.taptap.feature.addtap.AddTapScreen
 import org.koin.androidx.compose.KoinAndroidContext
@@ -48,10 +47,10 @@ class HomeScreen : Screen {
         val nav = LocalNavigator.currentOrThrow
 
         val shouldOpen = screenModel.showDropDown.collectAsState().value
-        val dropDownId = screenModel.dropDownId.collectAsState().value
+        val dropDownDef = screenModel.dropDownId.collectAsState().value
 
         Scaffold(
-            topBar = { TopAppBar(title = { Text(text = "TapTap") })},
+            topBar = { TopAppBar(title = { Text(text = "TapTap") }) },
             floatingActionButton = {
                 FloatingActionButton(onClick = { nav.push(AddTapScreen()) }) {
                     Icon(Icons.Default.Add, contentDescription = "Add Tap")
@@ -61,7 +60,10 @@ class HomeScreen : Screen {
             Column(modifier = Modifier.padding(paddValues)) {
 
                 if (shouldOpen) {
-                    TapAlertMenu(tapDef = dropDownId, onDelete = { screenModel.deleteTap(dropDownId) }, onClose = { screenModel.closeDropDown() })
+                    TapAlertMenu(
+                        tapDef = dropDownDef,
+                        onDelete = { screenModel.deleteTap(dropDownDef) },
+                        onClose = { screenModel.closeDropDown() })
                 }
 
                 when (tapsState) {
@@ -72,6 +74,7 @@ class HomeScreen : Screen {
                                 .align(Alignment.CenterHorizontally)
                         )
                     }
+
                     is TapsState.Success -> {
                         LazyColumn {
                             items(tapsState.taps) { tap ->
@@ -84,24 +87,6 @@ class HomeScreen : Screen {
                         }
                     }
                 }
-            }
-        }
-    }
-    @OptIn(ExperimentalMaterial3Api::class)
-    @Composable
-    fun TapAlertMenu(
-        tapDef: Int,
-        onDelete: (Int) -> Unit,
-        onClose: () -> Unit
-    ) {
-        AlertDialog(onDismissRequest = { onClose() }) {
-            Button(
-                onClick = {
-                    onDelete(tapDef)
-                    onClose()
-                }
-            ) {
-                Text(text = "Delete")
             }
         }
     }
