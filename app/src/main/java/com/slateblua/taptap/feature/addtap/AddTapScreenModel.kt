@@ -6,28 +6,20 @@ import com.slateblua.taptap.data.TapRepo
 import com.slateblua.taptap.data.local.model.Tap
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.launch
-
 class AddTapScreenModel(private val tapRepo: TapRepo) : ScreenModel {
 
     private val _tapName = MutableStateFlow("")
     val tapName = _tapName
 
+    private val _tapGoal = MutableStateFlow(MIN_TAP_GOAL)
+    val tapGoal = _tapGoal
+
     fun setTapName(name: String) {
         _tapName.value = name
     }
 
-    private val _tapGoal = MutableStateFlow(0)
-    val tapGoal = _tapGoal
-
     private fun setTapGoal(goal: Int) {
-        _tapGoal.value = goal.coerceAtLeast(0)
-    }
-
-    fun addTap(tap: Tap) {
-        screenModelScope.launch {
-            tapRepo.addTap(tap)
-        }
-        clear()
+        _tapGoal.value = goal.coerceAtLeast(MIN_TAP_GOAL)
     }
 
     fun addToGoal() {
@@ -38,9 +30,18 @@ class AddTapScreenModel(private val tapRepo: TapRepo) : ScreenModel {
         setTapGoal(tapGoal.value - 1)
     }
 
+    fun addTap(tap: Tap) {
+        screenModelScope.launch {
+            tapRepo.addTap(tap)
+        }
+        clear()
+    }
+
     private fun clear() {
         setTapName("")
         setTapGoal(0)
     }
 
 }
+
+const val MIN_TAP_GOAL = 1

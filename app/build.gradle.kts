@@ -23,7 +23,7 @@ android {
 
     buildTypes {
         release {
-            isMinifyEnabled = false
+            isMinifyEnabled = true
             proguardFiles(
                 getDefaultProguardFile("proguard-android-optimize.txt"),
                 "proguard-rules.pro"
@@ -73,6 +73,7 @@ dependencies {
     implementation("cafe.adriel.voyager:voyager-koin:1.0.0-rc10")
 
     implementation("cafe.adriel.voyager:voyager-navigator:1.0.0-rc10")
+    implementation("cafe.adriel.voyager:voyager-transitions:1.0.0-rc10")
 
     implementation("app.cash.sqldelight:coroutines-extensions:2.0.0")
 

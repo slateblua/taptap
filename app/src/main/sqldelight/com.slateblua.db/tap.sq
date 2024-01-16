@@ -8,7 +8,7 @@ CREATE TABLE IF NOT EXISTS tapEnt(
 );
 
 getAllTaps:
-    SELECT * FROM tapEnt ORDER BY goal - current == 0 ASC;
+    SELECT * FROM tapEnt;
 
 addTap:
     INSERT INTO tapEnt (name, goal, current)

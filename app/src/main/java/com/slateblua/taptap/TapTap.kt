@@ -4,6 +4,7 @@ import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import cafe.adriel.voyager.navigator.Navigator
+import cafe.adriel.voyager.transitions.SlideTransition
 import com.slateblua.taptap.theme.TapTheme
 import com.slateblua.taptap.feature.home.HomeScreen
 
@@ -13,7 +14,9 @@ class TapTap : ComponentActivity() {
 
         setContent {
             TapTheme {
-                Navigator(HomeScreen())
+                Navigator(HomeScreen()) { nav ->
+                    SlideTransition(nav)
+                }
             }
         }
     }
