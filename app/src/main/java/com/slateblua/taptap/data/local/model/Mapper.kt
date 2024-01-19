@@ -7,7 +7,7 @@ fun Tap.toTapEnt(): TapEnt {
         def = def,
         name = name,
         goal = goal,
-        current = current
+        current = current,
     )
 }
 
@@ -16,6 +16,6 @@ fun TapEnt.toTap(): Tap {
         def = def,
         name = name,
         goal = goal,
-        current = current
+        current = current,
     )
 }

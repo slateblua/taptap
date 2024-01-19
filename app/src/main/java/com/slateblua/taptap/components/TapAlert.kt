@@ -11,14 +11,14 @@ import androidx.compose.runtime.Composable
 fun TapAlertMenu(
     tapDef: Int,
     onDelete: (Int) -> Unit,
-    onClose: () -> Unit
+    onClose: () -> Unit,
 ) {
     AlertDialog(onDismissRequest = { onClose() }) {
         Button(
             onClick = {
                 onDelete(tapDef)
                 onClose()
-            }
+            },
         ) {
             Text(text = "Delete")
         }

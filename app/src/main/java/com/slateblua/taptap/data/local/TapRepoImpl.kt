@@ -13,7 +13,6 @@ import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.map
 
 class TapRepoImpl(tapDatabase: TapDatabase) : TapRepo {
-
     private val dbQuery = tapDatabase.tapQueries
 
     override fun getAllTaps(): Flow<List<Tap>> {
@@ -45,7 +44,7 @@ class TapRepoImpl(tapDatabase: TapDatabase) : TapRepo {
             dbQuery.updateTap(
                 name = tapEnt.name,
                 goal = tapEnt.goal,
-                def = tapEnt.def
+                def = tapEnt.def,
             )
         }
     }

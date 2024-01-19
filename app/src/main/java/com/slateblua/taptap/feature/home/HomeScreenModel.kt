@@ -11,16 +11,17 @@ import kotlinx.coroutines.flow.stateIn
 import kotlinx.coroutines.launch
 
 class HomeScreenModel(private val tapRepo: TapRepo) : ScreenModel {
-
-    val tapsState = tapRepo.getAllTaps().map {
-        taps -> TapsState.Success(
-            taps = taps
+    val tapsState =
+        tapRepo.getAllTaps().map {
+                taps ->
+            TapsState.Success(
+                taps = taps,
+            )
+        }.stateIn(
+            scope = screenModelScope,
+            started = SharingStarted.WhileSubscribed(5_000),
+            initialValue = TapsState.Load,
         )
-    }.stateIn(
-        scope = screenModelScope,
-        started = SharingStarted.WhileSubscribed(5_000),
-        initialValue = TapsState.Load,
-    )
 
     private val _dropDownDef = MutableStateFlow(0)
     val dropDownId = _dropDownDef
@@ -51,11 +52,9 @@ class HomeScreenModel(private val tapRepo: TapRepo) : ScreenModel {
 }
 
 sealed class TapsState {
-
     data object Load : TapsState()
 
     data class Success(
         val taps: List<Tap>,
     ) : TapsState()
-
 }

@@ -40,64 +40,68 @@ class AddTapScreen : Screen {
 
     @OptIn(ExperimentalMaterial3Api::class)
     @Composable
-    fun AddTapScreenContent(
-        screenModel: AddTapScreenModel = getScreenModel()
-    ) {
-
+    fun AddTapScreenContent(screenModel: AddTapScreenModel = getScreenModel()) {
         val tapName = screenModel.tapName.collectAsState().value
         val tapGoal = screenModel.tapGoal.collectAsState().value
 
         Scaffold(
-            topBar = { TopAppBar(title = { Text(text = "TapTap") }) }
+            topBar = { TopAppBar(title = { Text(text = "TapTap") }) },
         ) { paddValues ->
             Column(
-                modifier = Modifier
-                    .padding(paddValues)
-                    .fillMaxSize()
+                modifier =
+                    Modifier
+                        .padding(paddValues)
+                        .fillMaxSize(),
             ) {
                 OutlinedTextField(
                     value = tapName,
                     onValueChange = { name -> screenModel.setTapName(name) },
-                    modifier = Modifier
-                        .align(alignment = Alignment.CenterHorizontally)
-                        .fillMaxWidth()
-                        .padding(all = 16.dp),
+                    modifier =
+                        Modifier
+                            .align(alignment = Alignment.CenterHorizontally)
+                            .fillMaxWidth()
+                            .padding(all = 16.dp),
                 )
                 Row(
-                    modifier = Modifier
-                        .padding(all = 16.dp)
-                        .fillMaxWidth(),
-                    horizontalArrangement = Arrangement.Center
+                    modifier =
+                        Modifier
+                            .padding(all = 16.dp)
+                            .fillMaxWidth(),
+                    horizontalArrangement = Arrangement.Center,
                 ) {
                     IconButton(
                         onClick = { screenModel.subtractFromGoal() },
-                        modifier = Modifier
-                            .clip(shape = CircleShape)
-                            .background(color = MaterialTheme.colorScheme.primaryContainer)
+                        modifier =
+                            Modifier
+                                .clip(shape = CircleShape)
+                                .background(color = MaterialTheme.colorScheme.primaryContainer),
                     ) {
                         Text(text = "-")
                     }
                     Text(
                         text = "$tapGoal",
-                        modifier = Modifier
-                            .align(alignment = Alignment.CenterVertically)
-                            .padding(horizontal = 16.dp),
-                        textAlign = TextAlign.Center
+                        modifier =
+                            Modifier
+                                .align(alignment = Alignment.CenterVertically)
+                                .padding(horizontal = 16.dp),
+                        textAlign = TextAlign.Center,
                     )
                     IconButton(
                         onClick = { screenModel.addToGoal() },
-                        modifier = Modifier
-                            .clip(shape = CircleShape)
-                            .background(color = MaterialTheme.colorScheme.primaryContainer)
+                        modifier =
+                            Modifier
+                                .clip(shape = CircleShape)
+                                .background(color = MaterialTheme.colorScheme.primaryContainer),
                     ) {
                         Text(text = "+")
                     }
                 }
                 Button(
                     onClick = { screenModel.addTap(tap = Tap(name = tapName, goal = tapGoal)) },
-                    modifier = Modifier
-                        .padding(all = 16.dp)
-                        .fillMaxWidth()
+                    modifier =
+                        Modifier
+                            .padding(all = 16.dp)
+                            .fillMaxWidth(),
                 ) {
                     Text(text = "Save Tap")
                 }

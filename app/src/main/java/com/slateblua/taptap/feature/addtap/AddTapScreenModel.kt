@@ -8,7 +8,6 @@ import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.launch
 
 class AddTapScreenModel(private val tapRepo: TapRepo) : ScreenModel {
-
     private val _tapName = MutableStateFlow("")
     val tapName = _tapName
 
@@ -42,7 +41,6 @@ class AddTapScreenModel(private val tapRepo: TapRepo) : ScreenModel {
         setTapName("")
         setTapGoal(MIN_TAP_GOAL)
     }
-
 }
 
 const val MIN_TAP_GOAL = 1

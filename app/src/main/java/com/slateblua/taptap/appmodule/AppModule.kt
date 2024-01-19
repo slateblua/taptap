@@ -13,24 +13,25 @@ import com.slateblua.taptap.feature.home.HomeScreenModel
 import comslatebluadb.TapEnt
 import org.koin.dsl.module
 
-val commonModule = module {
+val commonModule =
+    module {
 
-    single<TapRepo> { TapRepoImpl(get()) }
+        single<TapRepo> { TapRepoImpl(get()) }
 
-    single { HomeScreenModel(get()) }
+        single { HomeScreenModel(get()) }
 
-    single { AddTapScreenModel(get()) }
+        single { AddTapScreenModel(get()) }
 
-    single<AbstractSqlFactory> { SqlFactory(get()) }
+        single<AbstractSqlFactory> { SqlFactory(get()) }
 
-    single {
-        TapDatabase(
-            get<AbstractSqlFactory>().createDriver(),
-            TapEnt.Adapter(
-                defAdapter = defAdapter,
-                goalAdapter = goalAdapter,
-                currentAdapter = currentAdapter,
+        single {
+            TapDatabase(
+                get<AbstractSqlFactory>().createDriver(),
+                TapEnt.Adapter(
+                    defAdapter = defAdapter,
+                    goalAdapter = goalAdapter,
+                    currentAdapter = currentAdapter,
+                ),
             )
-        )
+        }
     }
-}

@@ -26,7 +26,7 @@ android {
             isMinifyEnabled = true
             proguardFiles(
                 getDefaultProguardFile("proguard-android-optimize.txt"),
-                "proguard-rules.pro"
+                "proguard-rules.pro",
             )
         }
     }
@@ -53,7 +53,7 @@ android {
 dependencies {
 
     implementation("androidx.core:core-ktx:1.12.0")
-    implementation("androidx.lifecycle:lifecycle-runtime-ktx:2.6.2")
+    implementation("androidx.lifecycle:lifecycle-runtime-ktx:2.7.0")
     implementation("androidx.activity:activity-compose:1.8.2")
     implementation(platform("androidx.compose:compose-bom:2023.08.00"))
     implementation("androidx.compose.ui:ui")
@@ -69,14 +69,13 @@ dependencies {
     debugImplementation("androidx.compose.ui:ui-test-manifest")
 
     implementation("io.insert-koin:koin-androidx-compose:3.5.2-RC1")
-    implementation("app.cash.sqldelight:android-driver:2.0.0")
+    implementation("app.cash.sqldelight:android-driver:2.0.1")
     implementation("cafe.adriel.voyager:voyager-koin:1.0.0-rc10")
 
     implementation("cafe.adriel.voyager:voyager-navigator:1.0.0-rc10")
     implementation("cafe.adriel.voyager:voyager-transitions:1.0.0-rc10")
 
     implementation("app.cash.sqldelight:coroutines-extensions:2.0.0")
-
 }
 
 sqldelight {

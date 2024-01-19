@@ -29,7 +29,6 @@ import org.koin.androidx.compose.KoinAndroidContext
 import org.koin.core.annotation.KoinExperimentalAPI
 
 class HomeScreen : Screen {
-
     @OptIn(KoinExperimentalAPI::class)
     @Composable
     override fun Content() {
@@ -40,9 +39,7 @@ class HomeScreen : Screen {
 
     @OptIn(ExperimentalMaterial3Api::class)
     @Composable
-    fun HomeScreenContent(
-        screenModel: HomeScreenModel = getScreenModel()
-    ) {
+    fun HomeScreenContent(screenModel: HomeScreenModel = getScreenModel()) {
         val tapsState = screenModel.tapsState.collectAsState().value
         val nav = LocalNavigator.currentOrThrow
 
@@ -55,23 +52,24 @@ class HomeScreen : Screen {
                 FloatingActionButton(onClick = { nav.push(AddTapScreen()) }) {
                     Icon(Icons.Default.Add, contentDescription = "Add Tap")
                 }
-            }
+            },
         ) { paddValues ->
             Column(modifier = Modifier.padding(paddValues)) {
-
                 if (shouldOpen) {
                     TapAlertMenu(
                         tapDef = dropDownDef,
                         onDelete = { screenModel.deleteTap(dropDownDef) },
-                        onClose = { screenModel.closeDropDown() })
+                        onClose = { screenModel.closeDropDown() },
+                    )
                 }
 
                 when (tapsState) {
                     is TapsState.Load -> {
                         CircularProgressIndicator(
-                            modifier = Modifier
-                                .fillMaxSize()
-                                .align(Alignment.CenterHorizontally)
+                            modifier =
+                                Modifier
+                                    .fillMaxSize()
+                                    .align(Alignment.CenterHorizontally),
                         )
                     }
 
@@ -81,7 +79,7 @@ class HomeScreen : Screen {
                                 TapCard(
                                     tap = tap,
                                     onTap = { screenModel.updateTapCurrent(tap.def) },
-                                    onLongPressed = { def -> screenModel.openDropDown(def) }
+                                    onLongPressed = { def -> screenModel.openDropDown(def) },
                                 )
                             }
                         }

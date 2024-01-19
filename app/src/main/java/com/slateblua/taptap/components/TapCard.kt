@@ -29,22 +29,24 @@ fun TapCard(
     onLongPressed: (Int) -> Unit,
 ) {
     Card(
-        modifier = Modifier
-            .combinedClickable(
-                onClick = { onTap(tap) },
-                onLongClick = { onLongPressed(tap.def) }
-            )
-            .fillMaxWidth()
-            .padding(horizontal = 16.dp, vertical = 8.dp),
+        modifier =
+            Modifier
+                .combinedClickable(
+                    onClick = { onTap(tap) },
+                    onLongClick = { onLongPressed(tap.def) },
+                )
+                .fillMaxWidth()
+                .padding(horizontal = 16.dp, vertical = 8.dp),
     ) {
         Row(
-            modifier = Modifier
-                .fillMaxSize()
-                .padding(all = 16.dp),
+            modifier =
+                Modifier
+                    .fillMaxSize()
+                    .padding(all = 16.dp),
             verticalAlignment = Alignment.CenterVertically,
         ) {
             Column(
-                modifier = Modifier.weight(1f)
+                modifier = Modifier.weight(1f),
             ) {
                 Text(
                     text = tap.name,
