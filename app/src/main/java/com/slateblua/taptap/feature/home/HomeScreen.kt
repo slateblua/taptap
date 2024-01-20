@@ -55,6 +55,7 @@ class HomeScreen : Screen {
             },
         ) { paddValues ->
             Column(modifier = Modifier.padding(paddValues)) {
+
                 if (shouldOpen) {
                     TapAlertMenu(
                         tapDef = dropDownDef,

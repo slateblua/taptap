@@ -1,0 +1,48 @@
+[versions]
+
+ktx = "1.12.0"
+activity-compose = "1.8.2"
+lifecycle-runtime-ktx = "2.7.0"
+
+voyager-koin = "1.0.0-rc10"
+voyager-transitions = "1.0.0-rc10"
+voyager-navigatior = "1.0.0-rc10"
+
+sqldelight = "2.0.1"
+sqldelight-coroutines = "2.0.0"
+
+koin = "3.5.2-RC1"
+
+junit = "4.13.2"
+junit-android = "1.1.5"
+espresso = "3.5.1"
+
+[libraries]
+
+androidx-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "ktx" }
+activity-compose = { group = "androidx.activity", name = "activity-compose", version.ref = "activity-compose" }
+lifecycle-runtime-ktx = { group = "androidx.lifecycle", name = "lifecycle-runtime-ktx", version.ref = "lifecycle-runtime-ktx" }
+
+junit = { group = "junit", name = "junit", version.ref = "junit" }
+junit-android = { group = "androidx.test.ext", name = "junit", version.ref = "junit-android" }
+junit4-ui = { group = "androidx.compose.ui", name = "ui-test-junit4" }
+espresso = { group = "androidx.test.espresso", name = "espresso-core", version.ref = "espresso" }
+
+voyager-koin = { group = "cafe.adriel.voyager", name = "voyager-koin", version.ref = "voyager-koin" }
+voyager-transitions = { group = "cafe.adriel.voyager", name = "voyager-transitions", version.ref = "voyager-transitions" }
+voyager-navigator = { group = "cafe.adriel.voyager", name = "voyager-navigator", version.ref = "voyager-navigatior" }
+
+sqldelight = { group = "app.cash.sqldelight", name = "android-driver", version.ref = "sqldelight" }
+sqldelight-coroutines = { group = "app.cash.sqldelight", name = "coroutines-extensions", version.ref = "sqldelight-coroutines" }
+
+koin = { group = "io.insert-koin", name = "koin-androidx-compose", version.ref = "koin" }
+
+ui = { group = "androidx.compose.ui", name = "ui" }
+ui-graphics = { group = "androidx.compose.ui", name = "ui-graphics" }
+ui-tooling-preview = { group = "androidx.compose.ui", name = "ui-tooling-preview" }
+material3 = { group = "androidx.compose.material3", name = "material3" }
+
+ui-test-manifest = { group = "androidx.compose.ui", name = "ui-test-manifest" }
+ui-debug-tooling = { group = "androidx.compose.ui", name = "ui-tooling" }
+
+[plugins]

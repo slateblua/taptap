@@ -52,30 +52,37 @@ android {
 
 dependencies {
 
-    implementation("androidx.core:core-ktx:1.12.0")
-    implementation("androidx.lifecycle:lifecycle-runtime-ktx:2.7.0")
-    implementation("androidx.activity:activity-compose:1.8.2")
+    implementation(libs.androidx.ktx)
+    implementation(libs.lifecycle.runtime.ktx)
+    implementation(libs.activity.compose)
+    
     implementation(platform("androidx.compose:compose-bom:2023.08.00"))
-    implementation("androidx.compose.ui:ui")
-    implementation("androidx.compose.ui:ui-graphics")
-    implementation("androidx.compose.ui:ui-tooling-preview")
-    implementation("androidx.compose.material3:material3")
-    testImplementation("junit:junit:4.13.2")
-    androidTestImplementation("androidx.test.ext:junit:1.1.5")
-    androidTestImplementation("androidx.test.espresso:espresso-core:3.5.1")
+
+    implementation(libs.ui)
+    implementation(libs.material3)
+    implementation(libs.ui.tooling.preview)
+    implementation(libs.ui.graphics)
+
+    testImplementation(libs.junit)
+
+    androidTestImplementation(libs.junit.android)
+    androidTestImplementation(libs.espresso)
     androidTestImplementation(platform("androidx.compose:compose-bom:2023.08.00"))
-    androidTestImplementation("androidx.compose.ui:ui-test-junit4")
-    debugImplementation("androidx.compose.ui:ui-tooling")
-    debugImplementation("androidx.compose.ui:ui-test-manifest")
 
-    implementation("io.insert-koin:koin-androidx-compose:3.5.2-RC1")
-    implementation("app.cash.sqldelight:android-driver:2.0.1")
-    implementation("cafe.adriel.voyager:voyager-koin:1.0.0-rc10")
+    androidTestImplementation(libs.junit4.ui)
 
-    implementation("cafe.adriel.voyager:voyager-navigator:1.0.0-rc10")
-    implementation("cafe.adriel.voyager:voyager-transitions:1.0.0-rc10")
+    debugImplementation(libs.ui.test.manifest)
+    debugImplementation(libs.ui.debug.tooling)
 
-    implementation("app.cash.sqldelight:coroutines-extensions:2.0.0")
+    implementation(libs.koin)
+
+    implementation(libs.sqldelight)
+    implementation(libs.sqldelight.coroutines)
+
+    implementation(libs.voyager.koin)
+    implementation(libs.voyager.navigator)
+    implementation(libs.voyager.transitions)
+
 }
 
 sqldelight {
