@@ -5,7 +5,6 @@ import androidx.compose.foundation.combinedClickable
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
-import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.material3.Card
 import androidx.compose.material3.Checkbox
@@ -30,20 +29,19 @@ fun TapCard(
 ) {
     Card(
         modifier =
-        Modifier
-            .combinedClickable(
-                onClick = { onTap(tap) },
-                onLongClick = { onLongPressed(tap.def) },
-            )
-            .height(120.dp)
-            .fillMaxWidth()
-            .padding(horizontal = 16.dp, vertical = 8.dp),
+            Modifier
+                .combinedClickable(
+                    onClick = { onTap(tap) },
+                    onLongClick = { onLongPressed(tap.def) },
+                )
+                .fillMaxWidth()
+                .padding(horizontal = 16.dp, vertical = 8.dp),
     ) {
         Row(
             modifier =
-            Modifier
-                .fillMaxSize()
-                .padding(all = 16.dp),
+                Modifier
+                    .fillMaxSize()
+                    .padding(all = 16.dp),
             verticalAlignment = Alignment.CenterVertically,
         ) {
             Text(

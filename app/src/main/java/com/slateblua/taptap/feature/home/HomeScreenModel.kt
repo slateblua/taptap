@@ -24,7 +24,7 @@ class HomeScreenModel(private val tapRepo: TapRepo) : ScreenModel {
         )
 
     private val _dropDownDef = MutableStateFlow(0)
-    val dropDownId = _dropDownDef
+    val dropDownDef = _dropDownDef
 
     private val _showDropDown = MutableStateFlow(false)
     val showDropDown = _showDropDown

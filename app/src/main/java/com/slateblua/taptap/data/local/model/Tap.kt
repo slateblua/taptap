@@ -10,11 +10,12 @@ data class Tap(
         get() = current == goal
 
     companion object {
-        val fakeTap = Tap(
-            def = 1,
-            name = "Fake tap",
-            goal = 4,
-            current = 3,
-        )
+        val fakeTap =
+            Tap(
+                def = 1,
+                name = "Fake tap",
+                goal = 4,
+                current = 3,
+            )
     }
 }

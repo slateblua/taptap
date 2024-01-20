@@ -44,7 +44,7 @@ class HomeScreen : Screen {
         val nav = LocalNavigator.currentOrThrow
 
         val shouldOpen = screenModel.showDropDown.collectAsState().value
-        val dropDownDef = screenModel.dropDownId.collectAsState().value
+        val dropDownDef = screenModel.dropDownDef.collectAsState().value
 
         Scaffold(
             topBar = { TopAppBar(title = { Text(text = "TapTap") }) },
@@ -55,7 +55,6 @@ class HomeScreen : Screen {
             },
         ) { paddValues ->
             Column(modifier = Modifier.padding(paddValues)) {
-
                 if (shouldOpen) {
                     TapAlertMenu(
                         tapDef = dropDownDef,
