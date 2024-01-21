@@ -12,7 +12,6 @@ data class Tap(
     companion object {
         val fakeTap =
             Tap(
-                def = 1,
                 name = "Fake tap",
                 goal = 4,
                 current = 3,

@@ -39,16 +39,6 @@ class TapRepoImpl(tapDatabase: TapDatabase) : TapRepo {
         }
     }
 
-    override suspend fun updateTap(tap: Tap) {
-        tap.toTapEnt().let { tapEnt: TapEnt ->
-            dbQuery.updateTap(
-                name = tapEnt.name,
-                goal = tapEnt.goal,
-                def = tapEnt.def,
-            )
-        }
-    }
-
     override suspend fun updateTapCurrent(def: Int) {
         dbQuery.updateTapCurrent(def)
     }

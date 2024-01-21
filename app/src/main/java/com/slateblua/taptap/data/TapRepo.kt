@@ -10,7 +10,5 @@ interface TapRepo {
 
     suspend fun addTap(tap: Tap)
 
-    suspend fun updateTap(tap: Tap)
-
     suspend fun updateTapCurrent(def: Int)
 }
