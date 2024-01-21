@@ -75,7 +75,10 @@ class HomeScreen : Screen {
 
                     is TapsState.Success -> {
                         LazyColumn {
-                            items(tapsState.taps) { tap ->
+                            items(
+                                tapsState.taps,
+                                key = { tap -> tap.def },
+                            ) { tap ->
                                 TapCard(
                                     tap = tap,
                                     onTap = { screenModel.updateTapCurrent(tap.def) },
