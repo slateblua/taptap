@@ -1,12 +1,12 @@
 [versions]
 
-ktx = "1.12.0"
-activity-compose = "1.8.2"
+ktx = "1.13.1"
+activity-compose = "1.9.0"
 lifecycle-runtime-ktx = "2.7.0"
 
-voyager-koin = "1.0.0-rc10"
-voyager-transitions = "1.0.0-rc10"
-voyager-navigatior = "1.0.0-rc10"
+voyager-koin = "1.0.0"
+voyager-transitions = "1.0.0"
+voyager-navigatior = "1.0.0"
 
 sqldelight = "2.0.1"
 sqldelight-coroutines = "2.0.0"
