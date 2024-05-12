@@ -25,16 +25,11 @@ import cafe.adriel.voyager.koin.getScreenModel
 import com.slateblua.taptap.components.TapButton
 import com.slateblua.taptap.components.TapGoalButton
 import com.slateblua.taptap.data.local.model.Tap
-import org.koin.androidx.compose.KoinAndroidContext
-import org.koin.core.annotation.KoinExperimentalAPI
 
 class AddTapScreen : Screen {
-    @OptIn(KoinExperimentalAPI::class)
     @Composable
     override fun Content() {
-        KoinAndroidContext {
-            AddTapScreenContent()
-        }
+        AddTapScreenContent()
     }
 
     @OptIn(ExperimentalMaterial3Api::class)

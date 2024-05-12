@@ -5,7 +5,6 @@ activity-compose = "1.9.0"
 lifecycle-runtime-ktx = "2.7.0"
 
 voyager-koin = "1.0.0"
-voyager-transitions = "1.0.0"
 voyager-navigatior = "1.0.0"
 
 sqldelight = "2.0.1"
@@ -16,12 +15,14 @@ koin = "3.5.2-RC1"
 junit = "4.13.2"
 junit-android = "1.1.5"
 espresso = "3.5.1"
+composeBom = "2024.05.00"
 
 [libraries]
 
 androidx-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "ktx" }
 activity-compose = { group = "androidx.activity", name = "activity-compose", version.ref = "activity-compose" }
 lifecycle-runtime-ktx = { group = "androidx.lifecycle", name = "lifecycle-runtime-ktx", version.ref = "lifecycle-runtime-ktx" }
+androidx-compose-bom = { group = "androidx.compose", name = "compose-bom", version.ref = "composeBom" }
 
 junit = { group = "junit", name = "junit", version.ref = "junit" }
 junit-android = { group = "androidx.test.ext", name = "junit", version.ref = "junit-android" }
@@ -29,7 +30,6 @@ junit4-ui = { group = "androidx.compose.ui", name = "ui-test-junit4" }
 espresso = { group = "androidx.test.espresso", name = "espresso-core", version.ref = "espresso" }
 
 voyager-koin = { group = "cafe.adriel.voyager", name = "voyager-koin", version.ref = "voyager-koin" }
-voyager-transitions = { group = "cafe.adriel.voyager", name = "voyager-transitions", version.ref = "voyager-transitions" }
 voyager-navigator = { group = "cafe.adriel.voyager", name = "voyager-navigator", version.ref = "voyager-navigatior" }
 
 sqldelight = { group = "app.cash.sqldelight", name = "android-driver", version.ref = "sqldelight" }

@@ -25,16 +25,11 @@ import cafe.adriel.voyager.navigator.currentOrThrow
 import com.slateblua.taptap.components.TapAlertMenu
 import com.slateblua.taptap.components.TapCard
 import com.slateblua.taptap.feature.addtap.AddTapScreen
-import org.koin.androidx.compose.KoinAndroidContext
-import org.koin.core.annotation.KoinExperimentalAPI
 
 class HomeScreen : Screen {
-    @OptIn(KoinExperimentalAPI::class)
     @Composable
     override fun Content() {
-        KoinAndroidContext {
-            HomeScreenContent()
-        }
+        HomeScreenContent()
     }
 
     @OptIn(ExperimentalMaterial3Api::class)
