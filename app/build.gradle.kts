@@ -56,7 +56,7 @@ dependencies {
     implementation(libs.lifecycle.runtime.ktx)
     implementation(libs.activity.compose)
 
-    implementation(platform("androidx.compose:compose-bom:2023.08.00"))
+    implementation(platform(libs.androidx.compose.bom))
 
     implementation(libs.ui)
     implementation(libs.material3)
@@ -67,7 +67,7 @@ dependencies {
 
     androidTestImplementation(libs.junit.android)
     androidTestImplementation(libs.espresso)
-    androidTestImplementation(platform("androidx.compose:compose-bom:2023.08.00"))
+    androidTestImplementation(platform(libs.androidx.compose.bom))
 
     androidTestImplementation(libs.junit4.ui)
 
@@ -81,7 +81,6 @@ dependencies {
 
     implementation(libs.voyager.koin)
     implementation(libs.voyager.navigator)
-    implementation(libs.voyager.transitions)
 }
 
 sqldelight {
