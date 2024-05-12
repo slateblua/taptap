@@ -12,7 +12,8 @@ TapTap is an Android app that helps you stay on track with your daily goals!
 - **Voyager:** Effortlessly navigate between screens with smooth transitions.
 - **Jetpack Compose:** Create beautiful and dynamic UIs with ease.
 - **SqlDelight:** Manage data efficiently and reliably.
-- **Koin:** Simplify dependency injection for a clean architecture.
+- **Koin:** Simplify dependency injection.
 
+Mockups made with [Previewed](https://previewed.app/template/CFA9A157)
 
 
