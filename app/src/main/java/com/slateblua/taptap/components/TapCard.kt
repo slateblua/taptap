@@ -50,7 +50,7 @@ fun TapCard(
                 style = MaterialTheme.typography.headlineSmall.copy(fontWeight = FontWeight.Normal),
             )
             CircularProgressIndicator(
-                progress = tap.current.toFloat() / tap.goal.toFloat(),
+                progress = { tap.current.toFloat() / tap.goal.toFloat() },
                 trackColor = MaterialTheme.colorScheme.outline,
             )
             Checkbox(checked = tap.completed, onCheckedChange = { })
