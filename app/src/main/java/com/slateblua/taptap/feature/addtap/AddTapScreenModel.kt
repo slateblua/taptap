@@ -5,14 +5,15 @@ import cafe.adriel.voyager.core.model.screenModelScope
 import com.slateblua.taptap.data.TapRepo
 import com.slateblua.taptap.data.local.model.Tap
 import kotlinx.coroutines.flow.MutableStateFlow
+import kotlinx.coroutines.flow.asStateFlow
 import kotlinx.coroutines.launch
 
 class AddTapScreenModel(private val tapRepo: TapRepo) : ScreenModel {
     private val _tapName = MutableStateFlow("")
-    val tapName = _tapName
+    val tapName = _tapName.asStateFlow()
 
     private val _tapGoal = MutableStateFlow(MIN_TAP_GOAL)
-    val tapGoal = _tapGoal
+    val tapGoal = _tapGoal.asStateFlow()
 
     fun setTapName(name: String) {
         _tapName.value = name

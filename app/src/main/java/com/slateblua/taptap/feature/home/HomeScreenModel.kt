@@ -6,6 +6,7 @@ import com.slateblua.taptap.data.TapRepo
 import com.slateblua.taptap.data.local.model.Tap
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.SharingStarted
+import kotlinx.coroutines.flow.asStateFlow
 import kotlinx.coroutines.flow.map
 import kotlinx.coroutines.flow.stateIn
 import kotlinx.coroutines.launch
@@ -24,10 +25,10 @@ class HomeScreenModel(private val tapRepo: TapRepo) : ScreenModel {
         )
 
     private val _dropDownDef = MutableStateFlow(0)
-    val dropDownDef = _dropDownDef
+    val dropDownDef = _dropDownDef.asStateFlow()
 
     private val _showDropDown = MutableStateFlow(false)
-    val showDropDown = _showDropDown
+    val showDropDown = _showDropDown.asStateFlow()
 
     fun openDropDown(def: Int) {
         _dropDownDef.value = def
