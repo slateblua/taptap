@@ -1,8 +1,8 @@
 [versions]
 
 ktx = "1.13.1"
-activity-compose = "1.9.0"
-lifecycle-runtime-ktx = "2.7.0"
+activity-compose = "1.9.1"
+lifecycle-runtime-ktx = "2.8.4"
 
 voyager-koin = "1.0.0"
 voyager-navigatior = "1.0.0"
@@ -13,9 +13,9 @@ sqldelight-coroutines = "2.0.0"
 koin = "3.5.2-RC1"
 
 junit = "4.13.2"
-junit-android = "1.1.5"
-espresso = "3.5.1"
-composeBom = "2024.05.00"
+junit-android = "1.2.1"
+espresso = "3.6.1"
+composeBom = "2024.06.00"
 
 [libraries]
 
